@@ -62,15 +62,16 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <div class="form-group">
-                                    <label for="datanasc">Data de Nascimento</label>
-                                    <input type="date" class="form-control" placeholder="Data de Nascimento" id="datanasc">
+                                <label for="idade">Idade</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Idade" id="datanasc" aria-describedby="basic-addon2">
+                                    <span class="input-group-addon" id="basic-addon2">anos</span>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label for="tipoanimal">Tipo de Animal</label>
-                                    <select class="form-control" id="tipoanimal">
+                                    <select class="form-control" id="tipoanimal" required>
                                         <option value="">Escolha o tipo de animal</option>
                                         <option value="cabra">Cabra</option>
                                         <option value="cachorro">Cachorro</option>
