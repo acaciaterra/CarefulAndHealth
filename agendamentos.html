@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Careful & Health - Meus Agendamentos</title>
+        <link rel="stylesheet" type="text/css" href="pacotes/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="pacotes/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
+        <link href="css/tema.css" rel="stylesheet">
+        <link href="css/agendamentos.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top" class="index">
+        <!-- navbar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+            <div class="container">
+                <!-- Classe sr-only exibirá o botão apenas para leitores de tela -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <a class="sr-only" href="#footer">Ir para rodapé</a>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Careful & Health</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="agendamentos.html">Meus Agendamentos</a>
+                        </li>
+                        <li>
+                            <a href="consulta.html">Meus Animais</a>
+                        </li>
+                            <!-- dropdown de opções do usuário -->
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nome do Usuário <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="dados.html">Alterar Dados Pessoais</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="index.html">Sair</a></li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Esta página contém os dados dos agendamentos feitos pelo usuário, onde pode também cancelar um agendamento -->
+        <!-- Aqui não se faz necessário o uso de templates, pois a replicação de código será resolvida posteriormente com o PHP -->
+        <div class="container" id="container-tabela">
+            <div class="row">
+                <table class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome do Animal</th>
+                            <th>Data do Agendamento</th>
+                            <th>Método de Pagamento</th>
+                            <th>Precisa Buscar em Casa</th>
+                            <th>Tipo de Agendamento</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sabrina, a cabra</td>
+                            <td>17/06/2017</td>
+                            <td>Dinheiro</td>
+                            <td>Não</td>
+                            <td>Veterinário</td>
+                            <td>
+                                <button type="button" class="btn btn-danger"data-toggle="tooltip"
+                                    data-placement="right" title="Cancelar">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Murphy</td>
+                            <td>18/06/2017</td>
+                            <td>Dinheiro</td>
+                            <td>Sim</td>
+                            <td>Veterinário</td>
+                            <td><button type="button" class="btn btn-danger" data-toggle="tooltip"
+                                    data-placement="right" title="Cancelar">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>Rex</td>
+                            <td>29/06/2017</td>
+                            <td>Cartão de Crédito</td>
+                            <td>Não</td>
+                            <td>Banho e Tosa</td>
+                            <td>
+                                <button type="button" class="btn btn-danger"data-toggle="tooltip"
+                                    data-placement="right" title="Cancelar">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sebastião</td>
+                            <td>04/07/2017</td>
+                            <td>Dinheiro</td>
+                            <td>Não</td>
+                            <td>Banho e Tosa</td>
+                            <td>
+                                <button type="button" class="btn btn-danger"data-toggle="tooltip"
+                                    data-placement="right" title="Cancelar">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="footer-below" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            Copyright &copy; Careful & Health 2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="pacotes/jquery.min.js"></script>
+        <script src="pacotes/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+
+        <!-- Tooltip utilizado no botão de cancelamento de agendamento -->
+        <script>
+            $('[data-toggle="tooltip"]').tooltip();
+        </script>
+    </body>
+</html>

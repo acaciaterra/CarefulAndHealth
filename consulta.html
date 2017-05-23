@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Careful & Health - Meus Animais</title>
+        <link rel="stylesheet" type="text/css" href="pacotes/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="pacotes/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker.min.css">
+        <link href="css/tema.css" rel="stylesheet">
+        <link href="css/consulta.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top" class="index">
+        <!-- navbar -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+            <div class="container">
+                <!-- Classe sr-only exibirá o botão apenas para leitores de tela -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <a class="sr-only" href="#footer">Ir para rodapé</a>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Careful & Health</a>
+                </div>
+                <!-- Collapse para encolher o menu na navegação mobile -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="agendamentos.html">Meus Agendamentos <span class="badge">4</span></a>
+                        </li>
+                        <li>
+                            <a href="consulta.html">Meus Animais</a>
+                        </li>
+                            <!-- dropdown com opções para o usuário -->
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nome do Usuário <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="dados.html">Alterar Dados Pessoais</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="index.html">Sair</a></li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" id="container-botao">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <a href="novoanimal.html" class="btn btn-lg btn-primary">
+                        Cadastrar um Novo Animal
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Aqui haverão cards contendo os animais cadastrados, que podem ser escolhidos para a consulta -->
+        <div class="container" id="container-card">
+            <div class="row">
+                <!-- Template para não replicar código do card dos animais -->
+                <script id="animaisTemplate" type="text/x-handlebars-template">
+                    {{#each input}}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4">
+                        <div class="card card-inverse card-primary ">
+                            <img class="card-img-top" src="{{imageSrc}}" alt="{{alt}}">
+                            <blockquote class="card-blockquote p-3">
+                                <P>{{nome}}</P>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                                <a data-target="#myModal" data-toggle="modal" href="#myModal" id="agendar" class="btn btn-primary">Agendar</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
+                <!-- Fim do Template -->
+                <!-- Na div animaiscard serão exibidos os cards -->
+                <div id="animaiscard"></div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="footer-below" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            Copyright &copy; Careful & Health 2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal Agendamento de Consulta/Banho e Tosa -->
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Agendamento de Serviço</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <form>
+                                    <!-- Usuário escolhe se quer consulta veterinária ou serviço de banho e tosa -->
+                                    <label for="tiposervico">Escolha o tipo de serviço:</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio" checked>Veterinário</label>
+                                    <label class="radio-inline"><input type="radio" name="optradio">Banho e Tosa</label>
+                                    <div class="row" id="form">
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                            <!-- Nome do animal já virá preenchido, de acordo com o animal que foi selecionado anteriormente -->
+                                            <label for="animal">Animal:</label>
+                                            <input type="text" class="form-control" value="Sabrina, a cabra" id="animal" readonly>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                            <div class="input-group date">
+                                                <!-- Datepicker para escolher uma data para a consulta -->
+                                                <label for="dataconsulta">Data da Consulta:</label>
+                                                <input data-provide="datepicker" id="calendario" type="text" placeholder="Abrir Calendário" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                            <label for="pagamento">Forma de Pagamento:</label>
+                                             <select class="form-control" id="pagamento">
+                                                 <option value="">Escolha a forma de pagamento</option>
+                                                 <option value="cartaoc">Cartão de Crédito</option>
+                                                 <option value="cartaod">Cartão de Débito</option>
+                                                 <option value="dinheiro">Dinheiro</option>
+                                             </select>
+                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+                                            <label for="sintomas">Descrição do Serviço:</label>
+                                            <textarea placeholder="Detalhe o seu pedido. Em caso de consulta veterinária, informe os sintomas" class="form-control" rows="8" id="sintomas"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 checkbox">
+                                            <label><input type="checkbox">Preciso que busquem meu animal</label>
+                                        </div>
+                                    </div>
+                                    <a href="agendamentos.html" class="btn btn-primary">Agendar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pacotes jquery, bootstrap, datepicker e handlebars -->
+        <script src="pacotes/jquery.min.js"></script>
+        <script src="pacotes/bootstrap/js/bootstrap.min.js"></script>
+        <script src="pacotes/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="pacotes/handlebars-v4.0.10.js"></script>
+
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+        <!-- em cardanimais.js há a função javascript para o template acima criado -->
+        <script src="js/cardanimais.js"></script>
+
+        <!-- Calendário -->
+        <script>
+            $('input#calendario').datepicker({
+                autoclose: true, //Fechar ao clicar fora
+                todayHighlight: true, //Foco na data de hoje
+                startDate: '0d', //Permite apenas datas futuras
+                format: 'dd/mm/yyyy', //Formato da data (dia/mês/ano)
+            });
+        </script>
+    </body>
+</html>
