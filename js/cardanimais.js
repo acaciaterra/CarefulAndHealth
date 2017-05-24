@@ -11,9 +11,4 @@ $(document).ready(function() {
 	var buildTemplate = Handlebars.compile(source);
 	var output = buildTemplate(animais);
 	$("#animaiscard").html(output);
-
-	// Tooltip utilizado no botão de excluir animal
-	// Está aqui porque ele precisa esperar o
-	// template ser completamente carregado
-	$('[data-toggle="tooltip"]').tooltip();
 });
