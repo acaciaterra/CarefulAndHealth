@@ -1,0 +1,15 @@
+<template name="animalAgendamento">
+    <tr>
+        <td>{{ nomeAnimal }}</td>
+        <td>{{ dataAgendamento }}</td>
+        <td>{{ formaPagamento }}</td>
+        <td>{{ flagBuscarAnimal }}</td>
+        <td>{{ tipoAgendamento }}</td>
+        <td>
+            <button type="button" class="btn btn-danger deleteItem" data-toggle="tooltip"
+                data-placement="right" title="Cancelar">
+                <span class="glyphicon glyphicon-trash"></span>
+            </button>
+        </td>
+    </tr>
+</template>

@@ -1,0 +1,57 @@
+<template name="novoAnimal">
+    {{> navUsuario}}
+    <!-- Página para efetuar o cadastro de um novo animal -->
+    <div class="container"  id="container-form">
+        <div class="page-header">
+            <h4 id="h4">Cadastro de Novo Animal</h4>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <form action="/consulta">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome do Animal" id="nome" required>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <label for="idade">Idade</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Idade" id="idade" aria-describedby="basic-addon2" required>
+                                <span class="input-group-addon" id="basic-addon2">anos</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label for="tipoanimal">Tipo de Animal</label>
+                                <select class="form-control" id="tipoanimal" required>
+                                    <option value="">Escolha o tipo de animal</option>
+                                    <option value="cabra">Cabra</option>
+                                    <option value="cachorro">Cachorro</option>
+                                    <option value="cavalo">Cavalo</option>
+                                    <option value="coelho">Coelho</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="hammster">Hammster</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <label for="foto">Foto do Animal</label>
+                            <input type="text" id="foto" aria-describedby="basic-addon2" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="descricao">Descrição do Animal</label>
+                                <textarea placeholder="Informe as características do seu animal: alergias, histórico médico, etc..." class="form-control" rows="10" id="sintomas" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary cadastrar" value="Cadastrar">
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

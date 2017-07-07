@@ -1,0 +1,13 @@
+<template name="cardAnimais">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4">
+        <div class="card card-inverse card-primary ">
+            <img class="card-img-top" src="{{ foto }}" alt="Foto de {{ nomeAnimal }}">
+            <blockquote class="card-blockquote p-3">
+                <p>{{ nomeAnimal }}</p>
+                <p>{{ observacoes }}</p>
+                <a data-target="#myModal" data-toggle="modal"
+                    href="#myModal" class="agendar btn btn-primary">Agendar</a>
+            </blockquote>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<template name = "produtos">
+    {{> navIndex}}
+    <div class="container" id="container-prod">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-header">
+                <h4 id="h4">Produtos Disponíveis em Loja Física</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="container-card">
+        <div class="row">
+            {{#each consultaProdutos}}
+                {{> cardProdutos}}
+            {{/each}}
+        </div>
+    </div>
+    {{> modalAcesso}}
+</template>

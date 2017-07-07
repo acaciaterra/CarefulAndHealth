@@ -1,0 +1,31 @@
+<template name="navIndex">
+    <!-- navbar -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Classe sr-only exibirá o botão apenas para leitores de tela -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <a class="sr-only" href="#footer">Ir para rodapé</a>
+                </button>
+                <a class="navbar-brand" href="/">Careful & Health</a>
+            </div>
+            <!-- Collapse para encolher o menu na navegação mobile -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="/#historia">História</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/#servicos">Serviços</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/#contato">Contato</a>
+                    </li>
+                    <li>
+                        <a data-target="#myModal" data-toggle="modal" href="#myModal" id="login" class="btn btn-outline">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

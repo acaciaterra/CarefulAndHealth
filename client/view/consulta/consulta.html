@@ -1,0 +1,22 @@
+<template name="consulta">
+    {{> navUsuario}}
+
+    <div class="container" id="container-botao">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <a href="/novo-animal" class="btn btn-lg btn-primary">
+                    Cadastrar um Novo Animal
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Aqui haverão cards contendo os animais cadastrados, que podem ser escolhidos para a consulta -->
+    <div class="container" id="container-card">
+        <div class="row">
+            {{#each consultaAnimais}}
+                {{> cardAnimais}}
+            {{/each}}
+        </div>
+    </div>
+    {{> modalAgendamento}}
+</template>

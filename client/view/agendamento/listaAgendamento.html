@@ -1,0 +1,24 @@
+<template name="agendamentos">
+    {{> navUsuario}}
+    <div class="container" id="container-tabela">
+        <div class="row">
+            <table class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome do Animal</th>
+                        <th>Data do Agendamento</th>
+                        <th>Método de Pagamento</th>
+                        <th>Precisa Buscar em Casa</th>
+                        <th>Tipo de Agendamento</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each agendamentos}}
+                        {{> animalAgendamento}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

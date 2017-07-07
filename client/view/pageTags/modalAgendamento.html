@@ -1,0 +1,60 @@
+<template name = "modalAgendamento">
+    <!-- Modal Agendamento de Consulta/Banho e Tosa -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Agendamento de Serviço</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <form action="/agendamentos">
+                                <!-- Usuário escolhe se quer consulta veterinária ou serviço de banho e tosa -->
+                                <label for="tiposervico">Escolha o tipo de serviço:</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" checked value="Veterinário"> Veterinário</label>
+                                <label class="radio-inline"><input type="radio" name="optradio" value="Banho e Tosa">Banho e Tosa</label>
+                                <div class="row" id="form">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                        <!-- Nome do animal já virá preenchido, de acordo com o animal que foi selecionado anteriormente -->
+                                        <label for="animal">Animal:</label>
+                                        <input type="text" class="form-control" value="" id="animal" readonly>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                        <div class="input-group date">
+                                            <!-- Datepicker para escolher uma data para a consulta -->
+                                            <label for="dataconsulta">Data da Consulta:</label>
+                                            <input id="calendario" type="text" placeholder="xx/xx/xxxx" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 form-group">
+                                        <label for="pagamento">Forma de Pagamento:</label>
+                                         <select class="form-control" id="pagamento">
+                                             <option value="">Escolha a forma de pagamento</option>
+                                             <option value="cartaoc">Cartão de Crédito</option>
+                                             <option value="cartaod">Cartão de Débito</option>
+                                             <option value="dinheiro">Dinheiro</option>
+                                         </select>
+                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group">
+                                        <label for="sintomas">Descrição do Serviço:</label>
+                                        <textarea id="observacoes" placeholder="Detalhe o seu pedido. Em caso de consulta veterinária, informe os sintomas" class="form-control" rows="8"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 checkbox">
+                                        <label><input type="checkbox" id="flagBuscarAnimal">Preciso que busquem meu animal</label>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary agendar" value="Agendar">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
